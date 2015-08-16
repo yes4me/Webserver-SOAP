@@ -30,7 +30,7 @@ import NET.webserviceX.www.StockQuoteSoap;
 import NET.webserviceX.www.StockQuoteSoapProxy;
 import lib.MyXML;
 
-public class Tests {
+public class Test_StockQuote {
 	@Before
 	public void setUp() throws Exception {
 	}
@@ -38,11 +38,11 @@ public class Tests {
 	public void tearDown() throws Exception {
 		System.out.println("DONE");
 	}
-	
+
 	@Test
 	public void getExistTicker() throws RemoteException {
 		System.out.println("RUNNING TEST: getExistTicker");
-		
+
 		StockQuoteSoap stockQuoteSoap = new StockQuoteSoapProxy();
 		String contentType = stockQuoteSoap.getQuote("NFLX");
 		/* RESULT:
@@ -68,7 +68,7 @@ public class Tests {
 		</StockQuotes>
 		*/
 		//System.out.println("content type: " + contentType);
-		
+
 		MyXML myXML		= new MyXML(contentType);
 		String symbol	= myXML.getTextContent("Symbol");
 		String name		= myXML.getTextContent("Name");
@@ -111,7 +111,7 @@ public class Tests {
 		MyXML myXML = new MyXML(contentType);
 		String symbol	= myXML.getTextContent("Symbol");
 		String name		= myXML.getTextContent("Name");
-		
+
 		Assert.assertEquals(symbol, "UCSCEXTN");
 		Assert.assertEquals(myXML.getTextContent("High"), "N/A" );
 		Assert.assertEquals(myXML.getTextContent("Low"), "N/A" );
