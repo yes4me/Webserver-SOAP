@@ -1,0 +1,37 @@
+
+                          Java & SOAP
+
+  What is it?
+  -----------
+
+  This is a demo of SOAP using Java. The project connects to
+  various free SOAP servers and test the return values.
+
+  Test_StockQuote.java will connect to a stock exchange SOAP and retrieve
+  the stock quote of NetFlix(NFLX).
+
+  Test_OtherSoap.java will connect either to one of the following SOAP server and retrieve:
+	- the Temperature
+	- The Currency converter
+	- The GPS location
+
+
+  Documentation
+  -------------
+  Explication of the code is: https://www.youtube.com/watch?v=NBIEzjCOQjY
+
+
+  Installation
+  ------------
+  Install Java JDK
+  Install Eclipse Java EE IDE for Web Developers
+  Install Gradle plugin in Eclipse
+
+  Add the Web Service Client: right click project name >
+  new > Other > Web Services > Web Service Client > next enter http of SOAP,
+  select install client(in the drawing) > finish
+
+
+  Contacts
+  --------
+  Author:	Thomas Nguyen - thomas_ejob@hotmail.com

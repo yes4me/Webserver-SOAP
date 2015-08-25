@@ -18,14 +18,13 @@ Geo:
 	Way to get IP address:
 		cmd > ping google.com > copy IP address (74.125.224.5)
 		Run > Run Configurations > Arguments > Program arguments: paste IP address > Run
-Stocks:
-	DOC:	http://service-repository.com/service/overview/386524652
-	WSDL:	http://www.webservicex.com/stockquote.asmx?WSDL
 =========================================================================== */
 
 package edu.ucsc.extension.soap;
 
 import java.rmi.RemoteException;
+
+import org.junit.Assert;
 
 //import org.junit.Test;
 
@@ -51,10 +50,13 @@ import net.webservicex.www.GeoIPServiceSoapProxy;
 public class Test_OtherSoap {
 	public static void main(String[] args) throws RemoteException {
 		TempConvertSoap clientTemp = new TempConvertSoapProxy();
+
 		String conversionTemp = clientTemp.celsiusToFahrenheit("100");
 		System.out.println("100C = "+ conversionTemp +"F");
+		Assert.assertEquals(conversionTemp, "212");
 		conversionTemp = clientTemp.fahrenheitToCelsius("212");
 		System.out.println("212F = "+ conversionTemp +"C");
+		Assert.assertEquals(conversionTemp, "100");
 
 		/*
 		CurrencyConvertorSoap clientCurrency = new CurrencyConvertorSoapProxy();
@@ -75,11 +77,6 @@ public class Test_OtherSoap {
 			System.out.println("IP address:"+ ipAddress +", country:"+ countryName);
 		}
 		*/
-
-		StockQuoteSoap stockQuoteSoap = new StockQuoteSoapProxy();
-		String quote = stockQuoteSoap.getQuote("GOOG");
-		//<StockQuotes><Stock><Symbol>GOOG</Symbol><Last>635.30</Last><Date>8/7/2015</Date><Time>4:00pm</Time><Change>-7.38</Change><Open>640.23</Open><High>642.68</High><Low>629.71</Low><Volume>1403865</Volume><MktCap>435.52B</MktCap><PreviousClose>642.68</PreviousClose><PercentageChange>-1.15%</PercentageChange><AnnRange>486.23 - 678.64</AnnRange><Earns>21.22</Earns><P-E>29.93</P-E><Name>Google Inc.</Name></Stock></StockQuotes>
-		System.out.println(quote);
 
 		System.out.println("DONE");
 	}

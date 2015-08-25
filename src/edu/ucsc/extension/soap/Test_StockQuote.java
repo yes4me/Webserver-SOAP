@@ -3,18 +3,13 @@ Created:	2015/08/05
 Author:		Thomas Nguyen - thomas_ejob@hotmail.com
 Purpose:	To practice SOAP & WSDL
 
-TempConvert
-	DOC:	http://www.service-repository.com/service/overview/-1789095104
-	WSDL:	http://www.w3schools.com/webservices/tempconvert.asmx?WSDL
-Currency Converter:
-	DOC:	http://www.webservicex.net/ws/WSDetails.aspx?WSID=10
-	WSDL:	http://www.webservicex.net/CurrencyConvertor.asmx?WSDL
-Geo:
-	DOC:	http://www.webservicex.net/ws/WSDetails.aspx?CATID=12&WSID=64
-	WSDL: 	http://www.webservicex.net/geoipservice.asmx?WSDL
-	Way to get IP address:
-		cmd > ping google.com > copy IP address (74.125.224.5)
-		Run > Run Configurations > Arguments > Program arguments: paste IP address > Run
+Purpose:	To practice SOAP & WSDL
+Setup:		right click project name > new > Other > Web Services > Web Client Service > next
+			enter http of SOAP, select install client(in the drawing) > finish
+
+Stocks:
+	DOC:	http://service-repository.com/service/overview/386524652
+	WSDL:	http://www.webservicex.com/stockquote.asmx?WSDL
 =========================================================================== */
 
 package edu.ucsc.extension.soap;
@@ -78,6 +73,7 @@ public class Test_StockQuote {
 		Assert.assertTrue( myXML.checkType("Low", Double.class) );
 		Assert.assertEquals(name, "Netflix");
 	}
+	
 	@Test
 	public void getFakeTicker() throws RemoteException {
 		System.out.println("RUNNING TEST: getFakeTicker");
@@ -115,6 +111,6 @@ public class Test_StockQuote {
 		Assert.assertEquals(symbol, "UCSCEXTN");
 		Assert.assertEquals(myXML.getTextContent("High"), "N/A" );
 		Assert.assertEquals(myXML.getTextContent("Low"), "N/A" );
-		Assert.assertEquals(name, "Netflix");
+		Assert.assertEquals(name, "N/A");
 	}
 } 
