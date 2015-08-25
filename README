@@ -10,7 +10,7 @@
   Test_StockQuote.java will connect to a stock exchange SOAP and retrieve
   the stock quote of NetFlix(NFLX).
 
-  Test_OtherSoap.java will connect either to one of the following SOAP server and retrieve:
+  Test_OtherSoap.java will connect to one of the following SOAP server and retrieve:
 	- the Temperature
 	- The Currency converter
 	- The GPS location
