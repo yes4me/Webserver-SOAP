@@ -3,9 +3,7 @@
 
   What is it?
   -----------
-
-  This is a demo of SOAP using Java. The project connects to
-  various free SOAP servers and test the return values.
+  The project connects to various free SOAP servers and test the return values.
 
   Test_StockQuote.java will connect to a stock exchange SOAP and retrieve
   the stock quote of NetFlix(NFLX).
