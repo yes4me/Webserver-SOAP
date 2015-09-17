@@ -31,9 +31,6 @@ import org.junit.Assert;
 import com.w3schools.www.webservices.TempConvertSoap;
 import com.w3schools.www.webservices.TempConvertSoapProxy;
 
-import NET.webserviceX.www.StockQuoteSoap;
-import NET.webserviceX.www.StockQuoteSoapProxy;
-
 /*
 import NET.webserviceX.www.Currency;
 import NET.webserviceX.www.CurrencyConvertor;

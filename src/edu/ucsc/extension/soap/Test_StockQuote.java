@@ -67,7 +67,8 @@ public class Test_StockQuote {
 		MyXML myXML		= new MyXML(contentType);
 		String symbol	= myXML.getTextContent("Symbol");
 		String name		= myXML.getTextContent("Name");
-
+		System.out.println(symbol +"__"+ name);
+		
 		Assert.assertEquals(symbol, "NFLX");
 		Assert.assertTrue( myXML.checkType("High", Double.class) );
 		Assert.assertTrue( myXML.checkType("Low", Double.class) );
@@ -107,6 +108,7 @@ public class Test_StockQuote {
 		MyXML myXML = new MyXML(contentType);
 		String symbol	= myXML.getTextContent("Symbol");
 		String name		= myXML.getTextContent("Name");
+		System.out.println(symbol +"__"+ name);
 
 		Assert.assertEquals(symbol, "UCSCEXTN");
 		Assert.assertEquals(myXML.getTextContent("High"), "N/A" );
